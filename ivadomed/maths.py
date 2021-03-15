@@ -1,9 +1,9 @@
 import numpy as np
 import os
 import scipy.signal
+from typing import Iterator
 
-
-def rescale_values_array(arr, minv=0.0, maxv=1.0, dtype=np.float32):
+def rescale_values_array(arr: np.ndarray, minv:float=0.0, maxv:float=1.0, dtype:type=np.float32) -> np.ndarray:
     """Rescale the values of numpy array `arr` to be from `minv` to `maxv`.
 
     Args:
@@ -18,6 +18,7 @@ def rescale_values_array(arr, minv=0.0, maxv=1.0, dtype=np.float32):
     mina = np.min(arr)
     maxa = np.max(arr)
 
+    # if min value of the array == max of the array return array*minv
     if mina == maxa:
         return arr * minv
 
