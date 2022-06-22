@@ -61,6 +61,7 @@ jobs:
 
       # Step 2: Install dependencies
       - name: Install ivadomed
+        shell: cmd
         run: |
           pip install -e .[dev]
 
